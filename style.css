@@ -56,13 +56,15 @@ footer {
 
 /*INPUTS*/
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], #signin {
 	display: block;
-	transition: font-size 0.1s;
-	font-size: 16px;
 	height: 60px;
 	width: 100%;
 	max-width: 550px;
+}
+input[type=text], input[type=password] {
+	transition: font-size 0.1s;
+	font-size: 16px;
 	padding: 0 0 0 18px;
 	margin: 0 auto 10px auto;
 }
@@ -74,11 +76,7 @@ input[type=text]:focus, input[type=password]:focus {
 	background-color: rgb(252, 255, 64);
 	border: none;
 	cursor: pointer;
-	display: block;
 	margin: 0 auto 10px auto;
-	height: 60px;
-	width: 100%;
-	max-width: 550px;
 	padding: 15px;
 	font-size: 20px;
 	color: #313840;
@@ -94,8 +92,8 @@ input[type=text]:focus, input[type=password]:focus {
 /*RESNPOSIVE*/
 
 @media screen and (max-width: 480px) {
-	.container {
-		transition: padding 0.3s, margin 0.3s, width 0.3s;
+	section, form, footer {
+		transition: padding 0.3s, margin 0.3s;
 	}
 	.title {
 		margin-top: 90px;
@@ -105,8 +103,8 @@ input[type=text]:focus, input[type=password]:focus {
 	}
 }
 @media screen and (min-width: 481px) and (max-width: 767px) {
-	.container {
-		transition: padding 0.3s, margin 0.3s, width 0.3s;
+	section, form, footer {
+		transition: padding 0.3s, margin 0.3s;
 	}
 	.title {
 		margin-top: 100px;
@@ -116,8 +114,8 @@ input[type=text]:focus, input[type=password]:focus {
 	}
 }
 @media screen and (min-width: 768px) and (max-width: 959px) {
-	.container {
-		transition: padding 0.3s, margin 0.3s, width 0.3s;
+	section, form, footer {
+		transition: padding 0.3s, margin 0.3s;
 	}
 	.title {
 		margin-top: 120px;
