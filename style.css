@@ -1,0 +1,129 @@
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: url(img/bg.png) center top no-repeat;
+	background-size: 100%;
+	background-position: 100% 5%;
+	background-color: #313840;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
+img {
+	max-width: 140px;
+}
+h1 {
+	font-size: 50px;
+	color: #ffffff;
+	font-weight: 300;
+	margin: 10px 0;
+}
+p {
+	color: #5b636c;
+	font-size: 18px;
+	margin: 0;
+}
+a {
+	text-decoration: underline;
+	color: #50575e;
+	cursor: pointer;
+}
+.row {
+	width: 100%;
+	max-width: 840px;
+	margin: 0 auto;
+}
+.title {
+	text-align: center;
+	margin: 120px auto 0 auto;
+	padding: 0 10%;
+}
+form {
+	margin: 80px auto 0 auto;
+	padding: 0 5%;
+}
+footer {
+	text-align: center;
+	margin: 30px 0;
+	padding: 0 10%;
+}
+
+/*INPUTS*/
+
+input[type=text], input[type=password] {
+	display: block;
+	transition: font-size 0.1s;
+	font-size: 16px;
+	height: 60px;
+	width: 100%;
+	max-width: 550px;
+	padding: 0 0 0 18px;
+	margin: 0 auto 10px auto;
+}
+input[type=text]:focus, input[type=password]:focus {
+	outline: none;
+	font-size: 18px;
+}
+#signin {
+	background-color: rgb(252, 255, 64);
+	border: none;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto 10px auto;
+	height: 60px;
+	width: 100%;
+	max-width: 550px;
+	padding: 15px;
+	font-size: 20px;
+	color: #313840;
+	transition: font-weight 0.1s;
+}
+#signin:hover {
+	font-weight: 600;
+}
+#signin:focus {
+	outline: none;
+}
+
+/*RESNPOSIVE*/
+
+@media screen and (max-width: 480px) {
+	.container {
+		transition: padding 0.3s, margin 0.3s, width 0.3s;
+	}
+	.title {
+		margin-top: 90px;
+	}
+	form {
+		margin: 40px 0;
+	}
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+	.container {
+		transition: padding 0.3s, margin 0.3s, width 0.3s;
+	}
+	.title {
+		margin-top: 100px;
+	}
+	form {
+		margin: 40px 0;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+	.container {
+		transition: padding 0.3s, margin 0.3s, width 0.3s;
+	}
+	.title {
+		margin-top: 120px;
+		padding: 0 10%;
+	}
+	form {
+		margin: 40px 10px;
+	}
+}
