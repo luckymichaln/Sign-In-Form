@@ -4,23 +4,25 @@
 	<meta charset="UTF-8">
 	<title>Sign In Form</title>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 	<section class="row">
-		<section class="title">
+		<section id="lemonade" class="title">
 			<a><img src="img/logo.png"></a>
 			<h1>Sign in to Lemonade</h1>
 			<p>If you don’t have an account be hurry and <a href="#">create one.</a></p>
 		</section>
-		<form>
+		<form class="animate-delay">
 			<input type="text" placeholder="email"></input>
 			<input type="password" placeholder="password"></input>
 			<input id="signin" type="submit" value="Sign in">
 		</form>
-		<footer>
+		<footer class="animate-delay">
 			<a href="">Forgot your password? Get it here.</a>
 		</footer>
 	</section>
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="scripts/main.js"></script>
 </body>
 </html>
