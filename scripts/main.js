@@ -1,8 +1,6 @@
 
-$("#lemonade").animate({ 
-	opacity: "1", 
-	bottom: "0px" }, 800);
+$(".title").addClass("animation");
 
-$(".animate-delay").delay(300).animate({ 
-	opacity: "1",
-	bottom: "0px" }, 800);
+var delay = setTimeout(function () {
+    $(".anim-delay").addClass("animation");
+}, 400);
