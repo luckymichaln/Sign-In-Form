@@ -1,0 +1,27 @@
+// Animations
+
+=animation($name, $timing: null, $type: null)
+    @if $name == 'bounceArrow'
+        -moz-animation: $name 2s infinite
+        -webkit-animation: $name 2s infinite
+        animation: $name 2s infinite
+
+    @else
+        -moz-animation: $name $timing $type
+        -webkit-animation: $name $timing $type
+        animation: $name $timing $type
+
+// Keyframes
+
+=keyframes($animationName)
+    @-webkit-keyframes #{$animationName}
+        @content
+
+    @-moz-keyframes #{$animationName}
+        @content
+
+    @-o-keyframes #{$animationName}
+        @content
+
+    @keyframes #{$animationName}
+        @content

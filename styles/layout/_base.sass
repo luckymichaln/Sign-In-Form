@@ -1,0 +1,96 @@
+*
+    box-sizing: border-box
+
+body
+    height: 100vh
+    font-family: $font-sans
+    background: url(../img/bg.png) center top no-repeat
+    background-size: 100%
+    background-position: 100% 5%
+    background-color: $color-bg
+    -webkit-font-smoothing: antialiased
+
+img
+    min-width: 140px
+
+h1
+    margin: 10px 0
+    font:
+        weight: 300
+        size: 50px
+    color: $color-text-light
+
+a
+    color: $color-text-medium
+    text-decoration: underline
+
+form
+    +flexbox(flex, column, wrap, space-between, center)
+
+fieldset
+    position: relative
+    margin-bottom: 10px
+
+    span
+        position: absolute
+        top: 19px
+        left: 50px
+
+    svg
+        position: absolute
+        top: 12px
+        left: 10px
+        fill: $color-text-medium
+
+.row
+    +flexbox(flex, column, wrap, space-between, center)
+    width: 100%
+    max-width: 840px
+    max-height: 700px
+    margin: 0 auto
+
+.forgot-pass
+    margin: 30px 0 auto 0
+    text-align: center
+
+.title
+    // +translate(15px, $top: true)
+    margin: 100px 0 80px 0
+    // opacity: 1
+    text-align: center
+    transition: transform 1.4s ease-out, opacity 1.8s ease-in
+
+    p
+        font-size: 18px
+        color: $color-text-medium
+
+.login,
+.password,
+.btn-submit
+    height: 54px
+    width: 510px
+    color: $color-text-dark
+
+.login,
+.password
+    // width: 100%
+    padding-left: 48px
+    border: 1px solid transparent
+    // margin-bottom: 10px
+    font-size: 16px
+
+    &::-webkit-input-placeholder
+        color: $color-text-medium
+
+    &:focus,
+        border: 1px solid $color-accent
+
+.btn-submit
+    padding: 15px
+    border: none
+    font-size: 20px
+    background-color: $color-accent
+    cursor: pointer
+
+    &:focus
+        outline: none

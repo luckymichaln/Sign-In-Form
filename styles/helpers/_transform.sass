@@ -1,0 +1,21 @@
+=transform($oneorcombo)
+    -webkit-transform: $oneorcombo
+    -moz-transform: $oneorcombo
+    transform: $oneorcombo
+
+=translate($move-value, $top: false)
+    @if $top
+        -webkit-transform: translateY($move-value)
+        -moz-transform: translateY($move-value)
+        transform: translateY($move-value)
+
+    @else
+        -webkit-transform: translateX($move-value)
+        -moz-transform: translateX($move-value)
+        transform: translateX($move-value)
+
+=rotate($rotate-value)
+    -webkit-transform: rotate($rotate-value)
+    -moz-transform: rotate($rotate-value)
+    -o-transform: rotate($rotate-value)
+    transform: rotate($rotate-value)
