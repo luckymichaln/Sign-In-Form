@@ -1,38 +1,63 @@
-var $icon = $('svg');
+var icon = $('svg');
 var $input = $('input');
-var $hint = $('.hint');
-var $submit = $('.btn-submit');
+var hint = $('.hint');
+var submit = $('.btn-submit');
 
 $input.on('focus', function(e) {
     var target = $(e.target);
     var parent = target.closest('fieldset');
-    parent.find($hint).addClass('visible');
+    var visibleHint = parent.find(hint);
+    target.removeClass('accept');
+    parent.find(icon).removeClass('accept');
+
+    if (target.val() <= 0) {
+        visibleHint.removeClass('error').text('Type anything').addClass('visible');
+    }
 });
 
 $input.on('blur', function(e) {
     var target = $(e.target);
     var parent = target.closest('fieldset');
-    var visibleHint = parent.find($hint);
+    var visibleHint = parent.find(hint);
+    var $userInput = $('.username');
+    var $passInput = $('.password');
 
-    if (target.val() > 0) {
-        visibleHint.addClass('visible');
+    target.removeClass('error');
+    visibleHint.removeClass('visible');
+    submit.removeClass('ready-to-fire');
 
-    } else if (target.val() <= 0) {
+
+    if (target.val()) {
         visibleHint.removeClass('visible');
+        target.addClass('accept');
+        parent.find(icon).addClass('accept');
+
+        if ($userInput.hasClass('accept') && $passInput.hasClass('accept')) {
+            submit.addClass('ready-to-fire');
+        }
     }
 
 });
 
-$submit.on('click', function(e) {
+submit.on('click', function(e) {
     var target = $(e.target);
     var parent = target.closest('form');
-    var inputs = parent.find($input);
+    var validInput = parent.find($input);
+    var error = parent.find(hint);
 
-    // if (inputs.hasClass('accept')) {
-    // }
+    if (target.hasClass('ready-to-fire')) {
+        console.log('working');
+    }
 
-    // else {
+    else {
+
+        if (validInput.hasClass('accept')) {
+            error.removeClass('error');
+            validInput.closest('fieldset').find(hint).removeClass('visible');
+        }
+
+        validInput.addClass('error');
+        error.addClass('visible error').text("Can't be blank");
         e.preventDefault();
-        // target.removeClass('ready-to-fire');
-    // }
+    }
 });
