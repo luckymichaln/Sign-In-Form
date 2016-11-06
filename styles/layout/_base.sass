@@ -31,16 +31,35 @@ fieldset
     position: relative
     margin-bottom: 10px
 
-    span
-        position: absolute
-        top: 19px
-        left: 50px
-
     svg
         position: absolute
-        top: 12px
-        left: 10px
-        fill: $color-text-medium
+        top: 11px
+        left: 13px
+        fill: $color-icon
+        transition: fill .1s ease-out
+
+    .hint
+        position: absolute
+        top: 19px
+        right: -165px
+        width: 150px
+        opacity: 0
+        color: $color-hint
+        transition: opacity .3s ease-out .1s
+
+        &.visible
+            opacity: 1
+
+        &.error
+            color: $color-error
+
+    &::before
+        content: ''
+        position: absolute
+        top: 1px
+        left: 56px
+        height: 52px
+        border-right: 1px solid $color-border
 
 .row
     +flexbox(flex, column, wrap, space-between, center)
@@ -54,9 +73,7 @@ fieldset
     text-align: center
 
 .title
-    // +translate(15px, $top: true)
     margin: 100px 0 80px 0
-    // opacity: 1
     text-align: center
     transition: transform 1.4s ease-out, opacity 1.8s ease-in
 
@@ -64,33 +81,53 @@ fieldset
         font-size: 18px
         color: $color-text-medium
 
-.login,
+.username,
 .password,
 .btn-submit
     height: 54px
     width: 510px
-    color: $color-text-dark
+    border-radius: 5px
 
-.login,
+.username,
 .password
-    // width: 100%
-    padding-left: 48px
-    border: 1px solid transparent
-    // margin-bottom: 10px
+    padding-left: 70px
+    border: 1px solid $color-border
     font-size: 16px
+    color: $color-text-light
+    background-color: $color-bg
+    transition: border-color .1s ease-out
+
+    &.error
+        border-color: $color-error
+        ~ svg
+            fill: $color-error
+
+    &.accept
+        border-color: $color-accept
+        ~ svg
+            fill: $color-accept
+
+    &:focus
+        border: 1px solid $color-accent
+
+        ~ svg
+            fill: $color-accent
 
     &::-webkit-input-placeholder
-        color: $color-text-medium
-
-    &:focus,
-        border: 1px solid $color-accent
+        color: $color-icon
 
 .btn-submit
     padding: 15px
     border: none
     font-size: 20px
-    background-color: $color-accent
-    cursor: pointer
+    color: $color-text-dark
+    background-color: $color-disable
+    cursor: not-allowed
+    transition: background-color .1s ease-out
+
+    &.ready-to-fire
+        background-color: $color-accent
+        cursor: pointer
 
     &:focus
         outline: none
