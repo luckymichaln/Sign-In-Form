@@ -31,18 +31,28 @@ fieldset
     position: relative
     margin-bottom: 10px
 
-    svg
-        position: absolute
-        top: 11px
-        left: 13px
-        fill: $color-icon
-        transition: fill .1s ease-out
+    .icon-wrapper
+        svg
+            position: absolute
+            top: 11px
+            left: 13px
+            fill: $color-icon
+            transition: fill .1s ease-out
+
+        &::before
+            content: ''
+            position: absolute
+            top: 1px
+            left: 56px
+            height: 52px
+            border-right: 1px solid $color-border
+            transition: border-color .1s ease-out
 
     .hint
         position: absolute
         top: 19px
-        right: -165px
-        width: 150px
+        right: -135px
+        width: 110px
         opacity: 0
         color: $color-hint
         cursor: none
@@ -53,14 +63,6 @@ fieldset
 
         &.error
             color: $color-error
-
-    &::before
-        content: ''
-        position: absolute
-        top: 1px
-        left: 56px
-        height: 52px
-        border-right: 1px solid $color-border
 
 .row
     +flexbox(flex, column, wrap, space-between, center)
@@ -82,15 +84,15 @@ fieldset
         font-size: 18px
         color: $color-text-medium
 
-.username,
+.btn-submit,
 .password,
-.btn-submit
+.username
     height: 54px
     width: 510px
     border-radius: 5px
 
-.username,
-.password
+.password,
+.username
     padding-left: 70px
     border: 1px solid $color-border
     font-size: 16px
@@ -100,19 +102,30 @@ fieldset
 
     &.error
         border-color: $color-error
+
         ~ svg
             fill: $color-error
 
+        ~ .icon-wrapper::before
+            border-color: $color-error
+
     &.accept
         border-color: $color-accept
+
         ~ svg
             fill: $color-accept
+
+        ~ .icon-wrapper::before
+            border-color: $color-accept
 
     &:focus
         border: 1px solid $color-accent
 
         ~ svg
             fill: $color-accent
+
+        ~ .icon-wrapper::before
+            border-color: $color-accent
 
     &::-webkit-input-placeholder
         color: $color-icon
@@ -123,7 +136,6 @@ fieldset
     font-size: 20px
     color: $color-text-dark
     background-color: $color-disable
-    cursor: not-allowed
     transition: background-color .1s ease-out
 
     &.ready-to-fire
